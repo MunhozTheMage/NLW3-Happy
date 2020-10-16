@@ -77,3 +77,16 @@ const toggleYesOrNo = (e) => {
         break;
     }
 }
+
+// Validate if user marked the adress on the map.
+
+function validateForm(e) {
+    let lat = document.querySelector("[name=lat]");
+    let lng = document.querySelector("[name=lng]");
+
+    if(lat.value === "" || lng.value === "") {
+        e.preventDefault();
+        alert("Por favor, marque o orfanato no mapa.");
+        return;
+    }
+}

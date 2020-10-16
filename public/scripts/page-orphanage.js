@@ -6,7 +6,9 @@ const options = {
     zoomControl: false
 }
 
-const mymap = L.map("mapid", options).setView([-22.8528726,-46.3218398], 15);
+const spanCoord = document.querySelector('#coordinates');
+
+const mymap = L.map("mapid", options).setView([spanCoord.dataset.lat,spanCoord.dataset.lng], 15);
 
 // Create Map
 L
@@ -23,7 +25,7 @@ const icon = L
 });
 
 L
-.marker([-22.8528726,-46.3218398], { icon })
+.marker([spanCoord.dataset.lat,spanCoord.dataset.lng], { icon })
 .addTo(mymap);
 
 // Image Galery
