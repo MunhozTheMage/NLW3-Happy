@@ -29,6 +29,7 @@ module.exports = {
         try {
             const db = await Database;
             const orphanages = await db.all("SELECT * FROM orphanages");
+            console.log(orphanages);
             return res.render("orphanages", { orphanages });
         } 
         catch (error) {
